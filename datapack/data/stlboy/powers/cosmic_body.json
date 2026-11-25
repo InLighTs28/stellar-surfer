@@ -1,0 +1,45 @@
+{
+ "type": "apoli:multiple",
+ "name": {
+  "translate": "power.stlboy.cosmic_body.name",
+  "fallback": "Cosmic Body"
+ },
+ "description": {
+  "translate": "power.stlboy.cosmic_body.description",
+  "fallback": "Immune to fire, freezing and poison; breathes underwater."
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/passive.png",
+   "text": {
+    "translate": "badge.stlboy.cosmic_body.0",
+    "fallback": "Immune to fire, lava, freezing and poison. Breathes underwater."
+   }
+  }
+ ],
+ "fire": {
+  "type": "apoli:fire_immunity"
+ },
+ "fire_dmg": {
+  "type": "apoli:invulnerability",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "minecraft:is_fire"
+  }
+ },
+ "frost": {
+  "type": "apoli:invulnerability",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "minecraft:is_freezing"
+  }
+ },
+ "poison": {
+  "type": "apoli:effect_immunity",
+  "effect": "minecraft:poison"
+ },
+ "breath": {
+  "type": "apoli:water_breathing"
+ }
+}

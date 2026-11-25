@@ -31,6 +31,14 @@
     "translate": "badge.stlboy.float.3",
     "fallback": "§7You never need to breathe underwater."
    }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/passive.png",
+   "text": {
+    "translate": "badge.stlboy.float.rank",
+    "fallback": "Free float speed grows with Rank."
+   }
   }
  ],
  "type": "apoli:multiple",

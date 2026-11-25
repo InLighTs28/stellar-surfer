@@ -1,0 +1,58 @@
+{
+ "providers": [
+  {
+   "type": "bitmap",
+   "file": "stlboy:font/banner/ss_r1_0.png",
+   "ascent": 8,
+   "height": 12,
+   "chars": [
+    "\ue040"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "stlboy:font/banner/ss_r1_1.png",
+   "ascent": 8,
+   "height": 12,
+   "chars": [
+    "\ue041"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "stlboy:font/banner/ss_r1_2.png",
+   "ascent": 8,
+   "height": 12,
+   "chars": [
+    "\ue042"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "stlboy:font/banner/ss_r1_3.png",
+   "ascent": 8,
+   "height": 12,
+   "chars": [
+    "\ue043"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "stlboy:font/banner/ss_r1_4.png",
+   "ascent": 8,
+   "height": 12,
+   "chars": [
+    "\ue044"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "stlboy:font/banner/ss_r1_5.png",
+   "ascent": 8,
+   "height": 12,
+   "chars": [
+    "\ue045"
+   ]
+  }
+ ]
+}

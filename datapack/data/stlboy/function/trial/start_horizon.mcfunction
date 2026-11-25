@@ -13,3 +13,4 @@ bossbar set stlboy:trial max 800
 bossbar set stlboy:trial value 800
 bossbar set stlboy:trial players @s
 execute rotated ~ 0 positioned ^ ^2 ^12 run summon minecraft:marker ~ ~ ~ {Tags:["stlboy_tr","stlboy_tr_bh"]}
+function stlboy:trial/begin

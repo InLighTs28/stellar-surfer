@@ -20,3 +20,4 @@ execute at @s run summon minecraft:vex ~6 ~6 ~6 {Tags:["stlboy_tr","stlboy_tr_ec
 execute at @s run summon minecraft:vex ~-6 ~6 ~-6 {Tags:["stlboy_tr","stlboy_tr_echo"],CustomName:'{"text":"Echo of Aster","color":"aqua"}',Glowing:1b,PersistenceRequired:1b,DeathLootTable:"minecraft:empty"}
 bossbar set stlboy:trial max 6
 bossbar set stlboy:trial value 6
+function stlboy:trial/begin

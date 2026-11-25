@@ -16,3 +16,4 @@ scoreboard players set #n stlboy.tmp 26
 function stlboy:trial/mote_spawn
 bossbar set stlboy:trial max 22
 bossbar set stlboy:trial value 0
+function stlboy:trial/begin

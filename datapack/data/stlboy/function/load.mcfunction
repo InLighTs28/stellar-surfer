@@ -108,3 +108,28 @@ scoreboard objectives add stlboy.bha dummy
 # Ancienne Voie stellaire en hologramme (retiree) : nettoyage des restes
 kill @e[tag=stlboy_tree]
 tag @a remove stlboy_tree_open
+# chance de Traque par coup (en %)
+scoreboard objectives add stlboy.hch dummy
+scoreboard players set @a stlboy.hch 100
+# Difficulte du modpack : remise a zero, puis chaque mod dur detecte (progres conditionnes par NeoForge) se signale
+scoreboard objectives add stlboy.pack dummy
+scoreboard players set #l2hostility stlboy.pack 0
+scoreboard players set #enhancedai stlboy.pack 0
+scoreboard players set #cataclysm stlboy.pack 0
+scoreboard players set #apotheosis stlboy.pack 0
+scoreboard players set #born_in_chaos_v1 stlboy.pack 0
+scoreboard players set #goety stlboy.pack 0
+scoreboard players set #irons_spellbooks stlboy.pack 0
+scoreboard players set #hazennstuff stlboy.pack 0
+scoreboard players set #mowziesmobs stlboy.pack 0
+scoreboard players set #brutalbosses stlboy.pack 0
+scoreboard players set #block_factorys_bosses stlboy.pack 0
+scoreboard players set #irons_apothic_invaders stlboy.pack 0
+scoreboard players set #alexsmobs stlboy.pack 0
+scoreboard players set #bosses_of_mass_destruction stlboy.pack 0
+scoreboard players set #twilightforest stlboy.pack 0
+function stlboy:pack/compute
+advancement revoke @a from stlboy:pack/root
+# Distance infinie
+scoreboard objectives add stlboy.inf dummy
+scoreboard objectives add stlboy.infcd dummy

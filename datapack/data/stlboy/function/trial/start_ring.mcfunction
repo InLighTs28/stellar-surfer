@@ -22,3 +22,4 @@ execute rotated ~ 0 positioned ^6 ^36 ^72 run function stlboy:trial/ring_put
 execute rotated ~ 0 positioned ^-6 ^40 ^82 run function stlboy:trial/ring_put
 execute rotated ~ 0 positioned ^0 ^44 ^92 run function stlboy:trial/ring_put
 execute rotated ~ 0 positioned ^0 ^48 ^104 run function stlboy:trial/ring_put
+function stlboy:trial/begin

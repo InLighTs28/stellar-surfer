@@ -15,3 +15,4 @@ bossbar set stlboy:trial style progress
 bossbar set stlboy:trial max 800
 bossbar set stlboy:trial value 800
 bossbar set stlboy:trial players @s
+function stlboy:trial/begin

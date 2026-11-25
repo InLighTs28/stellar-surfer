@@ -13,3 +13,4 @@ bossbar set stlboy:trial style notched_10
 bossbar set stlboy:trial max 10
 bossbar set stlboy:trial value 0
 bossbar set stlboy:trial players @s
+function stlboy:trial/begin

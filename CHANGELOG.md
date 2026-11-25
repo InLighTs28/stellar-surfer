@@ -7,6 +7,36 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.2.0] — 2026-11-25
+
+### Trials, rebuilt
+- **DP** A trial **fails if you die** or leave the arena (72 blocks): it can no longer be completed from far away (dying while echoes were unloaded used to validate the Echo Siege).
+- **DP** Trial creatures (echoes, meteors, motes...) disappear as soon as their trial ends, even if they were in unloaded chunks (no more leftover vexes).
+- **DP** **3 attempts per shrine**; after the third failure the shrine crumbles and the memory waits for another shrine. A completed trial is consumed (its shrine falls into ruin).
+- **DP + RP** Each trial has **its own consequence** on failure (Slowness, Weakness, Hunted, Darkness, Mining Fatigue, Hunger...). The "Press [B] to try again" message is gone.
+- **DP** Shrines only appear in **Fallen Altars**, world structures (more frequent), never randomly next to the player.
+- **DP** The Hunger: the motes are now star motes (not edible, no value), counted from your inventory and removed when the trial ends: no more amethyst duplication.
+
+### The Surfer
+- **DP + RP** New base power **Cosmic Body**: immune to **fire, lava, freezing and poison**, and **breathes underwater** (proper water breathing; the old trick could break the Figura marker).
+- **DP + RP** Sun passive *Solar Heart* is now **Solar Flares burn 1 s longer** (fire immunity is now for every Surfer).
+- **DP + RP** **Hunted** no longer triggers on every hit: **100 % chance at Rank 0, -8.5 % per Rank, never below 15 %**.
+- **DP + RP** **Stellar Breath charges faster** at every Rank: 2.25 s → 1.65 s (Rank 3) → 1.3 s (Rank 6) → 0.9 s (Rank 9).
+- **DP + RP** **Free float gets faster with Rank**: +25 % (Rank 3), +45 % (Rank 6), +60 % (Rank 9), not while Hunted.
+- **DP + RP** New legendary Neptune skill **Infinite Distance** (Rank 8, 5 pts): when an enemy projectile or a monster gets close, space folds for 4 s: projectiles stop in mid-air, monsters crawl, -40 % damage taken (35 s recharge, costs a little hunger). The Stellar Path layout makes room for it.
+
+### Modpack compatibility
+- **DP** **Harder modpacks, stronger Surfer**: L2 Hostility, Enhanced AI, Cataclysm, Apotheosis, Born in Chaos, Goety, Iron's Spells, Hazen n Stuff, Mowzie's Mobs, Brutal Bosses... are detected (NeoForge conditions) and raise a difficulty tier: per tier +20 % Stardust, +10 % cosmic damage, +2 max health.
+- **DP** **Enhanced AI**: cosmic damage (Star Shards, Breath, orbs) no longer counts as a bare-hand hit, so zombies stop "biting back" from 20 blocks away.
+
+### Origin page
+- **RP** New animated title banner **THE SHOOTING STAR** (twinkling stars, shooting star), then the fact sheet with a new *Immune* line.
+
+### Figura avatar
+- Curios accessories, Essential cosmetics and armour layers follow the animated pose; Iron's Spells cast pose; charge timing matches the faster Breath; no more debug messages in chat.
+
+---
+
 ## [1.1.11] — 2026-11-21
 
 ### Origins window

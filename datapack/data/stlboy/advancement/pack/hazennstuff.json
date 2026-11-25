@@ -1,0 +1,17 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "hazennstuff"
+  }
+ ],
+ "parent": "stlboy:pack/root",
+ "criteria": {
+  "t": {
+   "trigger": "minecraft:tick"
+  }
+ },
+ "rewards": {
+  "function": "stlboy:pack/seen/hazennstuff"
+ }
+}

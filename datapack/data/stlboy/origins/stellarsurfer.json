@@ -7,6 +7,8 @@
  "impact": 3,
  "powers": [
   "stlboy:float",
+  "stlboy:float_rank",
+  "stlboy:cosmic_body",
   "stlboy:voice",
   "stlboy:flight",
   "stlboy:grace",
@@ -35,7 +37,8 @@
   "stlboy:sk_well",
   "stlboy:sk_nova",
   "stlboy:sk_sn",
-  "stlboy:sk_anchor"
+  "stlboy:sk_anchor",
+  "stlboy:pack_difficulty"
  ],
  "name": {
   "translate": "origin.stlboy.stellarsurfer.name",
@@ -46,8 +49,31 @@
   "text": "",
   "extra": [
    {
-    "text": "\n\n",
-    "font": "stlboy:origin",
+    "text": "",
+    "font": "stlboy:banner_r0",
+    "obfuscated": true,
+    "color": "white",
+    "italic": false
+   },
+   {
+    "text": "\n",
+    "obfuscated": false
+   },
+   {
+    "text": "",
+    "font": "stlboy:banner_r1",
+    "obfuscated": true,
+    "color": "white",
+    "italic": false
+   },
+   {
+    "text": "\n",
+    "obfuscated": false
+   },
+   {
+    "text": "",
+    "font": "stlboy:banner_r2",
+    "obfuscated": true,
     "color": "white",
     "italic": false
    },

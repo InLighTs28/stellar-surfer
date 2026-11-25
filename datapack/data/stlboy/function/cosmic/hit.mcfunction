@@ -17,4 +17,8 @@ execute unless score #cf stlboy.tmp matches 1 if score #cdt stlboy.tmp matches 0
 scoreboard players operation @s stlboy.clast = #cnow stlboy.tmp
 # Force cosmique (souffle du dragon) : degats cosmiques +30 %
 execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_cstr,limit=1] store result storage stlboy:tmp ch.cd double 0.013 run data get storage stlboy:tmp ch.cd 100
+# Difficulte du modpack : degats cosmiques +10 % par palier
+execute if score #pt stlboy.pack matches 1 store result storage stlboy:tmp ch.cd double 0.011 run data get storage stlboy:tmp ch.cd 100
+execute if score #pt stlboy.pack matches 2 store result storage stlboy:tmp ch.cd double 0.012 run data get storage stlboy:tmp ch.cd 100
+execute if score #pt stlboy.pack matches 3.. store result storage stlboy:tmp ch.cd double 0.013 run data get storage stlboy:tmp ch.cd 100
 function stlboy:cosmic/hit_do with storage stlboy:tmp ch

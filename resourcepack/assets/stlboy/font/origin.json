@@ -29,33 +29,6 @@
   },
   {
    "type": "bitmap",
-   "file": "stlboy:font/banner_strip_0.png",
-   "ascent": 8,
-   "height": 12,
-   "chars": [
-    ""
-   ]
-  },
-  {
-   "type": "bitmap",
-   "file": "stlboy:font/banner_strip_1.png",
-   "ascent": 8,
-   "height": 12,
-   "chars": [
-    ""
-   ]
-  },
-  {
-   "type": "bitmap",
-   "file": "stlboy:font/banner_strip_2.png",
-   "ascent": 8,
-   "height": 12,
-   "chars": [
-    ""
-   ]
-  },
-  {
-   "type": "bitmap",
    "file": "stlboy:font/sigil_strip_0.png",
    "ascent": 8,
    "height": 12,

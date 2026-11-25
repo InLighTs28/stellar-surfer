@@ -1,0 +1,477 @@
+{
+ "type": "apoli:multiple",
+ "hidden": true,
+ "name": "Rising Light",
+ "description": "Free float speed grows with Rank.",
+ "fwd": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.forward",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:hunted_timer",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 9
+     },
+     "action": {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:sprinting"
+      },
+      "if_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "z": -0.006
+      },
+      "else_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "z": -0.0024
+      }
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 6
+     },
+     "action": {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:sprinting"
+      },
+      "if_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "z": -0.0045
+      },
+      "else_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "z": -0.0018
+      }
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 3
+     },
+     "action": {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:sprinting"
+      },
+      "if_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "z": -0.0025
+      },
+      "else_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "z": -0.001
+      }
+     }
+    }
+   ]
+  }
+ },
+ "back": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.back",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:hunted_timer",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 9
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "z": 0.0024
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 6
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "z": 0.0018
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 3
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "z": 0.001
+     }
+    }
+   ]
+  }
+ },
+ "left": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.left",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:hunted_timer",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 9
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "x": -0.0024
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 6
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "x": -0.0018
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 3
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "x": -0.001
+     }
+    }
+   ]
+  }
+ },
+ "right": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.right",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:hunted_timer",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 9
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "x": 0.0024
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 6
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "x": 0.0018
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 3
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "local_horizontal_normalized",
+      "x": 0.001
+     }
+    }
+   ]
+  }
+ },
+ "up": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.jump",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:hunted_timer",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 9
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "world",
+      "y": 0.009
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 6
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "world",
+      "y": 0.00675
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 3
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "world",
+      "y": 0.00375
+     }
+    }
+   ]
+  }
+ },
+ "down": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.sneak",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:hunted_timer",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 9
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "world",
+      "y": -0.009
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 6
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "world",
+      "y": -0.00675
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 3
+     },
+     "action": {
+      "type": "apoli:add_velocity",
+      "space": "world",
+      "y": -0.00375
+     }
+    }
+   ]
+  }
+ }
+}

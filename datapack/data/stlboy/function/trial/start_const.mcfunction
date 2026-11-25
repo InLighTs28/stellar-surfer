@@ -19,3 +19,4 @@ execute at @s run summon minecraft:vex ~0 ~3 ~-8 {Tags:["stlboy_tr","stlboy_tr_c
 execute at @s run summon minecraft:vex ~7 ~6 ~-7 {Tags:["stlboy_tr","stlboy_tr_cecho"],CustomName:'{"text":"Starbound Echo","color":"yellow"}',Glowing:1b,PersistenceRequired:1b,DeathLootTable:"minecraft:empty",attributes:[{id:"minecraft:generic.max_health",base:400d}],Health:400f}
 bossbar set stlboy:trial max 5
 bossbar set stlboy:trial value 5
+function stlboy:trial/begin

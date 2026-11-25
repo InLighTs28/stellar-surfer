@@ -4,6 +4,7 @@
 $scoreboard players set #fl stlboy.tmp $(t)
 execute if score #fl stlboy.tmp matches ..2 run scoreboard players set #fl stlboy.tmp 3
 scoreboard players operation #fl stlboy.tmp *= #20 stlboy.const
+execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sun_heart,limit=1] run scoreboard players add #fl stlboy.tmp 20
 function stlboy:cls/flare_resist
 execute unless score @s stlboy.sfl >= #fl stlboy.tmp run scoreboard players operation @s stlboy.sfl = #fl stlboy.tmp
 scoreboard players operation @s stlboy.sfo = #own stlboy.tmp

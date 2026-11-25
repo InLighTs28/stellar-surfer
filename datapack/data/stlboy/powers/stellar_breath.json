@@ -1192,7 +1192,7 @@
  },
  "charge_r3": {
   "type": "apoli:action_over_time",
-  "interval": 4,
+  "interval": 2,
   "condition": {
    "type": "apoli:and",
    "conditions": [
@@ -1266,7 +1266,7 @@
  },
  "charge_r6": {
   "type": "apoli:action_over_time",
-  "interval": 2,
+  "interval": 1,
   "condition": {
    "type": "apoli:and",
    "conditions": [
@@ -1408,7 +1408,7 @@
   "entity_action": {
    "type": "apoli:change_resource",
    "resource": "stlboy:stellar_breath_charge",
-   "change": 1,
+   "change": 2,
    "operation": "add"
   }
  },
@@ -1594,6 +1594,68 @@
      }
     }
    ]
+  }
+ },
+ "charge_all": {
+  "type": "apoli:action_over_time",
+  "interval": 3,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:and",
+     "conditions": [
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.apoli.primary_active"
+       }
+      },
+      {
+       "type": "apoli:resource",
+       "resource": "stlboy:stellar_breath_need_release",
+       "comparison": "==",
+       "compare_to": 0
+      },
+      {
+       "type": "apoli:resource",
+       "resource": "stlboy:graviton_mode",
+       "comparison": "==",
+       "compare_to": 1,
+       "inverted": true
+      },
+      {
+       "type": "apoli:food_level",
+       "comparison": ">",
+       "compare_to": 6
+      }
+     ]
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:stellar_breath_charge",
+     "comparison": ">",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:stellar_breath_firing",
+     "comparison": "==",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:stellar_breath_charge",
+     "comparison": "<",
+     "compare_to": 59
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:change_resource",
+   "resource": "stlboy:stellar_breath_charge",
+   "change": 1,
+   "operation": "add"
   }
  }
 }

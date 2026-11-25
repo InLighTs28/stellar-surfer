@@ -429,14 +429,6 @@
    ]
   }
  },
- "gills": {
-  "type": "apoli:action_over_time",
-  "interval": 20,
-  "entity_action": {
-   "type": "apoli:execute_command",
-   "command": "execute if block ~ ~1.5 ~ minecraft:water run effect give @s minecraft:water_breathing 4 0 true"
-  }
- },
  "chronicle": {
   "type": "apoli:action_over_time",
   "interval": 20,

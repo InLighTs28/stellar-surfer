@@ -6,7 +6,7 @@
   {
    "type": "origins:tooltip",
    "sprite": "stlboy:textures/gui/badge/weak.png",
-   "text": "§7Every hit from a mob or player §cdrags you down§7."
+   "text": "§7A hit from a mob or player §cmay drag you down§7: §f100%§7 chance at Rank 0, §f-8.5%§7 per Rank, never below §f15%§7."
   },
   {
    "type": "origins:tooltip",
@@ -49,56 +49,65 @@
    "entity_type": "minecraft:player"
   },
   "entity_action": {
-   "type": "apoli:and",
-   "actions": [
-    {
-     "type": "apoli:if_else",
-     "condition": {
-      "type": "apoli:resource",
-      "resource": "stlboy:hunted_timer",
-      "comparison": "==",
-      "compare_to": 0
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:command",
+    "command": "execute if predicate stlboy:hunt_chance",
+    "comparison": ">=",
+    "compare_to": 1
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:hunted_timer",
+       "comparison": "==",
+       "compare_to": 0
+      },
+      "if_action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:execute_command",
+         "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
+        },
+        {
+         "type": "apoli:execute_command",
+         "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
+        },
+        {
+         "type": "apoli:execute_command",
+         "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
+        },
+        {
+         "type": "apoli:execute_command",
+         "command": "title @s actionbar {\"text\":\"✦ Hunted ✦\",\"color\":\"red\"}"
+        }
+       ]
+      }
      },
-     "if_action": {
-      "type": "apoli:and",
-      "actions": [
-       {
-        "type": "apoli:execute_command",
-        "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
-       },
-       {
-        "type": "apoli:execute_command",
-        "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
-       },
-       {
-        "type": "apoli:execute_command",
-        "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
-       },
-       {
-        "type": "apoli:execute_command",
-        "command": "title @s actionbar {\"text\":\"✦ Hunted ✦\",\"color\":\"red\"}"
-       }
-      ]
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:hunted_timer",
+      "change": 160,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:apply_effect",
+      "effect": {
+       "effect": "minecraft:unluck",
+       "duration": 160,
+       "amplifier": 0,
+       "is_ambient": false,
+       "show_particles": false,
+       "show_icon": true
+      }
      }
-    },
-    {
-     "type": "apoli:change_resource",
-     "resource": "stlboy:hunted_timer",
-     "change": 160,
-     "operation": "set"
-    },
-    {
-     "type": "apoli:apply_effect",
-     "effect": {
-      "effect": "minecraft:unluck",
-      "duration": 160,
-      "amplifier": 0,
-      "is_ambient": false,
-      "show_particles": false,
-      "show_icon": true
-     }
-    }
-   ]
+    ]
+   }
   }
  },
  "when_hit_player": {
@@ -121,91 +130,100 @@
    ]
   },
   "entity_action": {
-   "type": "apoli:and",
-   "actions": [
-    {
-     "type": "apoli:and",
-     "actions": [
-      {
-       "type": "apoli:if_else",
-       "condition": {
-        "type": "apoli:resource",
-        "resource": "stlboy:hunted_timer",
-        "comparison": "==",
-        "compare_to": 0
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:command",
+    "command": "execute if predicate stlboy:hunt_chance",
+    "comparison": ">=",
+    "compare_to": 1
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:if_else",
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:hunted_timer",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        "if_action": {
+         "type": "apoli:and",
+         "actions": [
+          {
+           "type": "apoli:execute_command",
+           "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
+          },
+          {
+           "type": "apoli:execute_command",
+           "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
+          },
+          {
+           "type": "apoli:execute_command",
+           "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
+          },
+          {
+           "type": "apoli:execute_command",
+           "command": "title @s actionbar {\"text\":\"✦ Hunted ✦\",\"color\":\"red\"}"
+          }
+         ]
+        }
        },
-       "if_action": {
-        "type": "apoli:and",
-        "actions": [
-         {
-          "type": "apoli:execute_command",
-          "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
-         },
-         {
-          "type": "apoli:execute_command",
-          "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
-         },
-         {
-          "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
-         },
-         {
-          "type": "apoli:execute_command",
-          "command": "title @s actionbar {\"text\":\"✦ Hunted ✦\",\"color\":\"red\"}"
-         }
-        ]
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:hunted_timer",
+        "change": 160,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:apply_effect",
+        "effect": {
+         "effect": "minecraft:unluck",
+         "duration": 160,
+         "amplifier": 0,
+         "is_ambient": false,
+         "show_particles": false,
+         "show_icon": true
+        }
        }
-      },
-      {
-       "type": "apoli:change_resource",
-       "resource": "stlboy:hunted_timer",
-       "change": 160,
-       "operation": "set"
-      },
-      {
-       "type": "apoli:apply_effect",
-       "effect": {
-        "effect": "minecraft:unluck",
-        "duration": 160,
-        "amplifier": 0,
-        "is_ambient": false,
-        "show_particles": false,
-        "show_icon": true
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:add_velocity",
+        "space": "world",
+        "y": -0.5
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:hunted_pull",
+        "change": 10,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:flight_level",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#E61F40FF\",end_color:\"#E61F4000\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1 ~ 0.3 0.5 0.3 0 15"
        }
-      }
-     ]
-    },
-    {
-     "type": "apoli:and",
-     "actions": [
-      {
-       "type": "apoli:add_velocity",
-       "space": "world",
-       "y": -0.5
-      },
-      {
-       "type": "apoli:change_resource",
-       "resource": "stlboy:hunted_pull",
-       "change": 10,
-       "operation": "set"
-      },
-      {
-       "type": "apoli:change_resource",
-       "resource": "stlboy:flight_level",
-       "change": 0,
-       "operation": "set"
-      },
-      {
-       "type": "apoli:execute_command",
-       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#E61F40FF\",end_color:\"#E61F4000\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1 ~ 0.3 0.5 0.3 0 15"
-      }
-     ]
-    },
-    {
-     "type": "apoli:execute_command",
-     "command": "playsound minecraft:entity.shulker_bullet.hit player @a ~ ~ ~ 0.6 0.6"
-    }
-   ]
+      ]
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:entity.shulker_bullet.hit player @a ~ ~ ~ 0.6 0.6"
+     }
+    ]
+   }
   }
  },
  "when_hit_mob": {
@@ -229,105 +247,114 @@
    ]
   },
   "entity_action": {
-   "type": "apoli:and",
-   "actions": [
-    {
-     "type": "apoli:and",
-     "actions": [
-      {
-       "type": "apoli:if_else",
-       "condition": {
-        "type": "apoli:resource",
-        "resource": "stlboy:hunted_timer",
-        "comparison": "==",
-        "compare_to": 0
-       },
-       "if_action": {
-        "type": "apoli:and",
-        "actions": [
-         {
-          "type": "apoli:execute_command",
-          "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
-         },
-         {
-          "type": "apoli:execute_command",
-          "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
-         },
-         {
-          "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
-         },
-         {
-          "type": "apoli:execute_command",
-          "command": "title @s actionbar {\"text\":\"✦ Hunted ✦\",\"color\":\"red\"}"
-         }
-        ]
-       }
-      },
-      {
-       "type": "apoli:if_else",
-       "condition": {
-        "type": "apoli:resource",
-        "resource": "stlboy:hunted_timer",
-        "comparison": "<",
-        "compare_to": 60
-       },
-       "if_action": {
-        "type": "apoli:and",
-        "actions": [
-         {
-          "type": "apoli:change_resource",
-          "resource": "stlboy:hunted_timer",
-          "change": 60,
-          "operation": "set"
-         },
-         {
-          "type": "apoli:apply_effect",
-          "effect": {
-           "effect": "minecraft:unluck",
-           "duration": 60,
-           "amplifier": 0,
-           "is_ambient": false,
-           "show_particles": false,
-           "show_icon": true
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:command",
+    "command": "execute if predicate stlboy:hunt_chance",
+    "comparison": ">=",
+    "compare_to": 1
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:if_else",
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:hunted_timer",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        "if_action": {
+         "type": "apoli:and",
+         "actions": [
+          {
+           "type": "apoli:execute_command",
+           "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
+          },
+          {
+           "type": "apoli:execute_command",
+           "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
+          },
+          {
+           "type": "apoli:execute_command",
+           "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
+          },
+          {
+           "type": "apoli:execute_command",
+           "command": "title @s actionbar {\"text\":\"✦ Hunted ✦\",\"color\":\"red\"}"
           }
-         }
-        ]
+         ]
+        }
+       },
+       {
+        "type": "apoli:if_else",
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:hunted_timer",
+         "comparison": "<",
+         "compare_to": 60
+        },
+        "if_action": {
+         "type": "apoli:and",
+         "actions": [
+          {
+           "type": "apoli:change_resource",
+           "resource": "stlboy:hunted_timer",
+           "change": 60,
+           "operation": "set"
+          },
+          {
+           "type": "apoli:apply_effect",
+           "effect": {
+            "effect": "minecraft:unluck",
+            "duration": 60,
+            "amplifier": 0,
+            "is_ambient": false,
+            "show_particles": false,
+            "show_icon": true
+           }
+          }
+         ]
+        }
        }
-      }
-     ]
-    },
-    {
-     "type": "apoli:and",
-     "actions": [
-      {
-       "type": "apoli:add_velocity",
-       "space": "world",
-       "y": -0.5
-      },
-      {
-       "type": "apoli:change_resource",
-       "resource": "stlboy:hunted_pull",
-       "change": 10,
-       "operation": "set"
-      },
-      {
-       "type": "apoli:change_resource",
-       "resource": "stlboy:flight_level",
-       "change": 0,
-       "operation": "set"
-      },
-      {
-       "type": "apoli:execute_command",
-       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#E61F40FF\",end_color:\"#E61F4000\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1 ~ 0.3 0.5 0.3 0 15"
-      }
-     ]
-    },
-    {
-     "type": "apoli:execute_command",
-     "command": "playsound minecraft:entity.shulker_bullet.hit player @a ~ ~ ~ 0.6 0.6"
-    }
-   ]
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:add_velocity",
+        "space": "world",
+        "y": -0.5
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:hunted_pull",
+        "change": 10,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:flight_level",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#E61F40FF\",end_color:\"#E61F4000\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1 ~ 0.3 0.5 0.3 0 15"
+       }
+      ]
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:entity.shulker_bullet.hit player @a ~ ~ ~ 0.6 0.6"
+     }
+    ]
+   }
   }
  },
  "tick": {
@@ -646,6 +673,14 @@
      }
     ]
    }
+  }
+ },
+ "chance": {
+  "type": "apoli:action_over_time",
+  "interval": 20,
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "function stlboy:hunt/chance"
   }
  }
 }

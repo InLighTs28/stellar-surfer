@@ -1,0 +1,57 @@
+{
+ "type": "apoli:multiple",
+ "hidden": true,
+ "name": "Harsher Sky",
+ "description": "Bonus health in hard modpacks.",
+ "hp1": {
+  "type": "apoli:conditioned_attribute",
+  "tick_rate": 40,
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score #pt stlboy.pack matches 1",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 2.0
+   }
+  ]
+ },
+ "hp2": {
+  "type": "apoli:conditioned_attribute",
+  "tick_rate": 40,
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score #pt stlboy.pack matches 2",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 4.0
+   }
+  ]
+ },
+ "hp3": {
+  "type": "apoli:conditioned_attribute",
+  "tick_rate": 40,
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score #pt stlboy.pack matches 3",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 6.0
+   }
+  ]
+ }
+}
