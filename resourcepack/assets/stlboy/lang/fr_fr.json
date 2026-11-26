@@ -577,5 +577,6 @@
  "power.stlboy.sk_infinity.name": "Distance infinie",
  "power.stlboy.sk_infinity.description": "§7§oEntre toi et eux, l'espace ne finit jamais.\n§6⚙ §r§7Quand un projectile ennemi ou un monstre approche, l'espace se plie pendant §f4 s§7 : les projectiles §fs'arrêtent en l'air§7, les monstres §frampent§7, tu subis §f40 % de dégâts en moins§7.\n§7Recharge §f35 s§7, coûte un peu de faim.\n§6Légendaire §8· Neptune · Coût 5 pts · Rang 8+",
  "badge.stlboy.sk_infinity.0": "§6⚙ §r§7L'espace se plie quand le danger approche (§f4 s§7) : projectiles figés, monstres ralentis, §f-40 %§7 de dégâts. Recharge §f35 s§7.\n§6Légendaire §8· Neptune · Coût 5 pts · Rang 8+",
- "stlboy.infinity.on": "✦ Distance infinie ✦"
+ "stlboy.infinity.on": "✦ Distance infinie ✦",
+ "stlboy.gui.impact": "Magnitude"
 }

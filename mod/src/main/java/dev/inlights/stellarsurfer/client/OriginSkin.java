@@ -14,15 +14,26 @@ import java.util.WeakHashMap;
  * Stellar Surfer skin for the Origins choose/view window, ONLY while the Stellar Surfer origin is displayed:
  * the window's texture set is swapped for ours, and the player's own Origins theme comes back as soon as another origin
  * is shown. No Origins texture is overwritten, so other origins and other packs are never affected.
+ * Only used with Origins 1.52 and older: from 1.53 the same textures are applied by the origin's "custom_gui".
  */
 public final class OriginSkin {
     private static final ResourceLocation STELLAR = ResourceLocation.fromNamespaceAndPath("stlboy", "stellarsurfer");
     private static final Map<OriginDisplayScreen, Object> ORIGINAL = new WeakHashMap<>();
     private static Field texField;
     private static Object ours;
-    private static boolean broken = false;
+    private static boolean broken = themedOrigins();
 
     private OriginSkin() {}
+
+    /** Origins 1.53+ themes the window from the origin's own "custom_gui" (set in the datapack), so this layer steps aside. */
+    private static boolean themedOrigins() {
+        try {
+            Origin.class.getMethod("gui");
+            return true;
+        } catch (Throwable t) {
+            return false;
+        }
+    }
 
     private static ResourceLocation t(String p) { return ResourceLocation.fromNamespaceAndPath("stlboy", "textures/gui/origin/" + p + ".png"); }
 

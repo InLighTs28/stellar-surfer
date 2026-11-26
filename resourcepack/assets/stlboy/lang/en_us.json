@@ -575,5 +575,6 @@
  "power.stlboy.sk_infinity.name": "Infinite Distance",
  "power.stlboy.sk_infinity.description": "§7§oBetween you and them, space never ends.\n§6⚙ §r§7When an enemy projectile or a monster gets close, space folds for §f4 s§7: projectiles §fstop in mid-air§7, monsters §fcrawl§7, you take §f40% less§7 damage.\n§7Recharge §f35 s§7, costs a little hunger.\n§6Legendary §8· Neptune · Cost 5 pts · Rank 8+",
  "badge.stlboy.sk_infinity.0": "§6⚙ §r§7Space folds when danger comes close (§f4 s§7): projectiles stop in mid-air, monsters crawl, §f-40%§7 damage. Recharge §f35 s§7.\n§6Legendary §8· Neptune · Cost 5 pts · Rank 8+",
- "stlboy.infinity.on": "✦ Infinite Distance ✦"
+ "stlboy.infinity.on": "✦ Infinite Distance ✦",
+ "stlboy.gui.impact": "Magnitude"
 }

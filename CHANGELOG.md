@@ -7,6 +7,16 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.2.1] — 2026-11-26
+
+### Origins window theme
+- **DP + RP** The Stellar Surfer origin sets **custom_gui** (Origins 1.53+): its choose and view screens use the Stellar Surfer theme (starry background, cosmic border, name plate, scroll bar and star impact dots from `stlboy:textures/gui/origin/`), only while this origin is shown. The datapack + resource pack version now gets the same window as the mod.
+- **DP + RP** The impact tooltip reads **Magnitude** (`impact_name`, EN/FR).
+- **DP** Origins 1.52 and older ignore the field: the window keeps its default look there.
+- **Mod** The Java skin of the window steps aside on Origins 1.53+ (the theme comes from the datapack) and still applies on 1.52. Built against Origins 1.53 and Apoli 1.139.
+
+---
+
 ## [1.2.0] — 2026-11-25
 
 ### Trials, rebuilt
