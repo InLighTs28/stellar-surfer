@@ -7,6 +7,14 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.2.3] — 2026-11-26
+
+### Fixed
+- **DP** **Compatibility with other origin packs**: the `origins:origin` layer file set `swappable: false`, `max_players_per_origin: 1`, `auto_choose`, `order`, `enabled` and `hidden`. Origins merges every pack's file for this shared layer, so these fields applied to the whole layer: every origin (Origins' own and other packs') became non-swappable and limited to one player. The file now only adds Stellar Surfer to the layer (`"replace": false`).
+- **DP** The one-player limit now applies to Stellar Surfer only, through the origin's own `max_players: 1` (Origins 1.53+; older versions ignore it). Stellar Surfer is no longer forced non-swappable: the layer follows Origins' defaults and the other packs.
+
+---
+
 ## [1.2.2] — 2026-11-26
 
 ### Fixed

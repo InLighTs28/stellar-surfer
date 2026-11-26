@@ -5,6 +5,7 @@
   "height": 32
  },
  "impact": 3,
+ "max_players": 1,
  "custom_gui": {
   "background": "stlboy:textures/gui/origin",
   "impact_name": {
