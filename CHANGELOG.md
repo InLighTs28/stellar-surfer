@@ -7,6 +7,13 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.2.4] — 2026-11-26
+
+### Fixed
+- **DP** The origin's `max_players` (added in 1.2.3) was 1: on Origins 1.53+ only one player could pick Stellar Surfer. It is now **5**, matching the five Surfer slots of the multiplayer system (one per class).
+
+---
+
 ## [1.2.3] — 2026-11-26
 
 ### Fixed
