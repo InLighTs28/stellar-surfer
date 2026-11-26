@@ -1,0 +1,20 @@
+{
+ "type": "apoli:action_on_key_press",
+ "hidden": true,
+ "name": "Orb Strike",
+ "description": "Hit a Black Hole or a White Hole to send it flying where you strike.",
+ "cooldown": 6,
+ "key": {
+  "key": "key.attack"
+ },
+ "condition": {
+  "type": "apoli:command",
+  "command": "execute if entity @e[tag=stlboy_orb,tag=!stlboy_dying,distance=..7]",
+  "comparison": ">=",
+  "compare_to": 1
+ },
+ "entity_action": {
+  "type": "apoli:execute_command",
+  "command": "function stlboy:orb/strike"
+ }
+}

@@ -1,36 +1,36 @@
 {
  "type": "apoli:multiple",
+ "name": {
+  "translate": "power.stlboy.toolkit.name",
+  "fallback": "Starborn Rituals"
+ },
+ "description": {
+  "translate": "power.stlboy.toolkit.description",
+  "fallback": "Small habits of a body made of sky."
+ },
  "badges": [
   {
    "type": "origins:tooltip",
    "sprite": "stlboy:textures/gui/badge/star.png",
    "text": {
-    "translate": "badge.stlboy.toolkit.0",
-    "fallback": "§eV§7 → place the held block in mid-air where you look. §8(Skill: Air Anchor)"
-   }
-  },
-  {
-   "type": "origins:tooltip",
-   "sprite": "stlboy:textures/gui/badge/star.png",
-   "text": {
-    "translate": "badge.stlboy.toolkit.1",
-    "fallback": "§eTab§7 → toggle the item magnet. §8(Skill: Stellar Magnetism)"
-   }
-  },
-  {
-   "type": "origins:tooltip",
-   "sprite": "stlboy:textures/gui/badge/star.png",
-   "text": {
-    "translate": "badge.stlboy.toolkit.2",
-    "fallback": "§7Right-click a §6shrine§7 (a pillar of light in the world) → begin a §6Trial of Aster§7."
-   }
-  },
-  {
-   "type": "origins:tooltip",
-   "sprite": "stlboy:textures/gui/badge/star.png",
-   "text": {
-    "translate": "badge.stlboy.toolkit.4",
+    "translate": "badge.stlboy.toolkit.journal",
     "fallback": "§eJ§7 → open §6Aster's Journal§7: Rank, bar, unlocked powers and Trials, live."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.toolkit.trial",
+    "fallback": "§7Find a §6shrine§7 in a §6Fallen Altar§7 and right-click it → §6Trial of Aster§7. 3 attempts per shrine; dying or fleeing fails it."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.toolkit.strike",
+    "fallback": "§eAttack§7 a §5Black Hole§7 or a §fWhite Hole§7 → it flies off where you strike (about 10 blocks)."
    }
   }
  ]

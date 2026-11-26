@@ -6,13 +6,14 @@
  },
  "impact": 3,
  "custom_gui": {
-  "background": "stlboy:gui/origin",
-  "impact_name": {"translate": "stlboy.gui.impact"}
+  "background": "stlboy:textures/gui/origin",
+  "impact_name": {
+   "translate": "stlboy.gui.impact"
+  }
  },
  "powers": [
   "stlboy:float",
   "stlboy:float_rank",
-  "stlboy:cosmic_body",
   "stlboy:voice",
   "stlboy:flight",
   "stlboy:grace",
@@ -25,6 +26,7 @@
   "stlboy:cosmic_arms",
   "stlboy:hunted",
   "stlboy:graviton",
+  "stlboy:orb_strike",
   "stlboy:starlight",
   "stlboy:stellar_breath",
   "stlboy:shard",

@@ -6,9 +6,17 @@
  },
  "description": {
   "translate": "power.stlboy.astral_body.description",
-  "fallback": "Each Rank makes your body of light a little stronger."
+  "fallback": "A body of starlight that neither burns, freezes nor sickens, and grows stronger with each Rank."
  },
  "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/passive.png",
+   "text": {
+    "translate": "badge.stlboy.astral_body.immune",
+    "fallback": "Immune to fire, lava, freezing and poison. Breathes underwater."
+   }
+  },
   {
    "type": "origins:tooltip",
    "sprite": "stlboy:textures/gui/badge/star.png",
@@ -297,5 +305,29 @@
    "type": "apoli:execute_command",
    "command": "function stlboy:skills/parry"
   }
+ },
+ "immune_fire": {
+  "type": "apoli:fire_immunity"
+ },
+ "immune_fire_dmg": {
+  "type": "apoli:invulnerability",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "minecraft:is_fire"
+  }
+ },
+ "immune_frost": {
+  "type": "apoli:invulnerability",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "minecraft:is_freezing"
+  }
+ },
+ "immune_poison": {
+  "type": "apoli:effect_immunity",
+  "effect": "minecraft:poison"
+ },
+ "immune_breath": {
+  "type": "apoli:water_breathing"
  }
 }

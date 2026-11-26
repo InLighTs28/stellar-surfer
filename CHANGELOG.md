@@ -7,6 +7,20 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.2.2] — 2026-11-26
+
+### Fixed
+- **DP** The Origins 1.53 window theme did not show: Origins prefixes a theme path that does not start with `textures/` with `textures/gui/choose_origin/`, so `stlboy:gui/origin` was looked up in the wrong folder. `custom_gui` now points to `stlboy:textures/gui/origin`.
+
+### New
+- **DP + RP** **Orb Strike**: attack (left click) your Black Hole or White Hole within 4 blocks and it flies off in the direction of the strike (1 block/tick, about 10 blocks), released even if you were steering it, and stops against blocks.
+
+### Changed
+- **DP + RP** **Cosmic Body merged into Astral Body**: one power entry for the body of light (fire, lava, freezing and poison immunity, water breathing, and the Rank bonuses).
+- **DP + RP** **Starborn Rituals** refocused: Aster's Journal, the Trials (shrines in Fallen Altars, 3 attempts, death or fleeing fails) and Orb Strike. The Air Anchor (V) and Stellar Magnetism (Tab) hints are gone, they were duplicates of the skills' own entries.
+
+---
+
 ## [1.2.1] — 2026-11-26
 
 ### Origins window theme
